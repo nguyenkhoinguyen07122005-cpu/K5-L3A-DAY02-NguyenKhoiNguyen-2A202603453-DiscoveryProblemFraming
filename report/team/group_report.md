@@ -18,18 +18,18 @@
 
 | # | Người đưa ra | Candidate (Job Story ngắn) | Actor | Bottleneck | Câu hỏi phản biện nhận được (ai hỏi) |
 |---:|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
-| 7 | | | | | |
-| 8 | | | | | |
-| 9 | | | | | |
-| 10 | | | | | |
-| 11 | | | | | |
-| 12 | | | | | |
+| 1 |Nguyễn Ngọc Sang |#1 – So sánh báo giá nhà cung cấp: Khi nhận nhiều báo giá từ các nhà cung cấp, nhân viên mua hàng cần tổng hợp và so sánh giá, số lượng, chiết khấu và điều kiện giao hàng để lựa chọn nhà cung cấp phù hợp. |Nhân viên mua hàng (Procurement Staff), Quản lý mua hàng (Procurement Manager), Kế toán. |Trích xuất, chuẩn hóa và tổng hợp dữ liệu từ nhiều file Excel/PDF có định dạng khác nhau; mất khoảng 35–40 phút. |Quản lý mua hàng: Làm thế nào đảm bảo AI đọc chính xác báo giá từ nhiều định dạng khác nhau? AI có đánh giá được điều kiện giao hàng và thanh toán thay vì chỉ chọn giá thấp nhất không? |
+| 2 |Nguyễn Ngọc Sang |#2 – Tra cứu chính sách bảo hành: Khi khách hàng hỏi về bảo hành, nhân viên cần tra cứu thông tin sản phẩm, ngày mua và lịch sử sửa chữa để đưa ra câu trả lời chính xác. |Nhân viên chăm sóc khách hàng (Customer Service), Nhân viên kỹ thuật (Technical Support), Quản lý bảo hành. |Tìm kiếm chính sách và đối chiếu thông tin từ nhiều nguồn; mất khoảng 4–6 phút. |Nhân viên chăm sóc khách hàng: Làm thế nào đảm bảo câu trả lời của AI đúng với chính sách hiện hành? Nếu thông tin sản phẩm hoặc lịch sử sửa chữa không đầy đủ thì AI xử lý thế nào? |
+| 3 |Nguyễn Ngọc Sang |#3 – Kiểm tra yêu cầu mua hàng: Khi nhận yêu cầu mua hàng từ các phòng ban, nhân viên cần kiểm tra thông tin, ngân sách và trạng thái phê duyệt trước khi chuyển sang bước xử lý tiếp theo. |Nhân viên mua hàng, Quản lý mua hàng, Nhân viên phòng ban đề xuất, Kế toán. |Kiểm tra ngân sách, trạng thái phê duyệt và xử lý hồ sơ thiếu thông tin; mất khoảng 5–7 phút. |Kế toán: AI dựa vào đâu để xác định yêu cầu vượt ngân sách hoặc chưa được phê duyệt? Làm thế nào tránh việc AI đánh giá sai và chuyển tiếp yêu cầu không hợp lệ? |
+| 4 |Đào Thị Thu Phương |Khi nhận yêu cầu từ nhiều phòng ban qua email, Word và Excel, tôi muốn tổng hợp và chuẩn hóa các yêu cầu thành một danh sách thống nhất để tránh bỏ sót thông tin. |Business Analyst, Project Manager, các phòng ban |Đọc, trích xuất và đối chiếu yêu cầu từ nhiều nguồn, mất khoảng 120–180 phút/lần. |AI có thể đọc hiểu chính xác các định dạng tài liệu khác nhau không? Làm thế nào để tránh bỏ sót hoặc hiểu sai yêu cầu? (AI phản biện) |
+| 5 |Đào Thị Thu Phương |Khi hoàn thành BRD, SRS, User Stories và Test Cases, tôi muốn kiểm tra tính nhất quán giữa các tài liệu để phát hiện yêu cầu bị thiếu hoặc mâu thuẫn. |Business Analyst, Developer, Tester |Đối chiếu nội dung và phát hiện sai lệch giữa các tài liệu, mất khoảng 120–180 phút/lần. |AI có thể phát hiện chính xác các sai lệch về ngữ nghĩa và quy tắc nghiệp vụ không? (AI phản biện) |
+| 6 |Đào Thị Thu Phương |Khi kết thúc cuộc họp với khách hàng và đội phát triển, tôi muốn tự động tạo Meeting Minutes và Action Items để tiết kiệm thời gian ghi chép và tránh bỏ sót công việc. |Business Analyst, Project Manager, Developer, Tester |Nghe lại bản ghi, tổng hợp nội dung và xác định người phụ trách, deadline, mất khoảng 30–45 phút/cuộc họp. |AI có thể nhận diện chính xác người phát biểu, quyết định, người phụ trách và deadline không? (AI phản biện) |
+| 7 | Nguyễn Khôi Nguyên | Khi code Python cho kết quả sai, muốn tìm nhanh nguyên nhân để không thử sửa nhiều lần | SV làm bài lập trình | Bước thử sửa theo phỏng đoán (vòng lặp sửa → chạy lại, ~6') | Debugger + unit test đã đủ chưa, cần gì thêm? |
+| 8 | Nguyễn Khôi Nguyên | Khi mô hình ML/DL cho kết quả kém, muốn đối chiếu dữ liệu, tiền xử lý, chỉ số để tìm nguyên nhân | SV làm bài ML/DL | Bước đối chiếu chỉ số và đoán nguyên nhân (~10'), mỗi lần đoán sai tốn thêm 1 vòng huấn luyện 15–60' | Nếu không có AI, cách đơn giản nhất để giảm một nửa số vòng là gì? |
+| 9 | Nguyễn Khôi Nguyên | Khi chương trình/huấn luyện chạy chậm, muốn tìm đoạn tốn thời gian | SV lập trình, ML/DL | Bước đoán đoạn chậm và thêm lệnh đo giờ (~15') | Chậm do code hay do phần cứng/dữ liệu lớn |
+| 10 |Nguyễn Trần Tiến |#1 – Debug firmware phần cứng: Khi lập trình phần cứng cho hệ thống đồ án tốt nghiệp, tôi muốn tra cứu và đồng bộ thông số datasheet với code firmware, để hệ thống kiểm thử đạt hiệu suất tốt nhất và không đọc sai thông số. |Sinh viên làm đồ án tốt nghiệp (bản thân tôi), team, thầy hướng dẫn. |Sửa code firmware và dò lỗi ngoại vi (bước 6 trong 7 bước); mất khoảng 90 phút/lần (ước lượng), tổng ~10–12 giờ/tuần trong khoảng 2 tháng. |Câu hỏi tôi muốn nhóm phản biện: Agent AI có thật sự giúp tự động hóa khâu dò lỗi phần cứng ngoại vi vốn phụ thuộc nhiều vào tính chất vật lý của linh kiện hay không, hay chỉ nên dùng quy trình Rule-based để kiểm tra cú pháp cấu hình thanh ghi? |
+| 11 |Nguyễn Trần Tiến |#2 – Đẩy dữ liệu cảm biến lên Cloud: Khi lập trình xong phần cứng firmware, tôi muốn truyền tải dữ liệu cảm biến lên đám mây, để lấy dữ liệu phục vụ huấn luyện hệ thống và cảnh báo qua giao diện web. |Sinh viên làm đồ án tốt nghiệp (bản thân tôi), team, thầy hướng dẫn. |Xử lý mất gói tin và kiểm tra độ ổn định đường truyền (bước 6 trong 7 bước); mất khoảng 120 phút/phiên (ước lượng), tổng 2–3 giờ/ngày trong hơn 2 tuần. |Điều tôi còn chưa chắc: độ ổn định của đường truyền mạng và cơ chế đồng bộ gói tin khi test thực tế. |
+| 12 |Nguyễn Trần Tiến |#3 – Hỗ trợ thành viên mới định dạng tệp dữ liệu: Khi hướng dẫn thành viên mới định dạng tệp dữ liệu, tôi muốn tệp dữ liệu của các bạn đúng chuẩn ngay từ đầu, để không phải mất nhiều giờ ngồi kiểm tra và chỉ ra từng dòng lỗi thủ công. |Người hướng dẫn (bản thân tôi), thành viên mới trong lớp lab, team, thầy hướng dẫn. |Mở tệp JSONL dò từng dòng để tìm chỗ sai (bước 5 trong 7 bước); mất khoảng 45 phút/đợt (ước lượng), tổng ~110 phút/đợt, 1–2 lần/tháng. |Điều tôi còn chưa chắc: mức độ tự giác của thành viên mới trong việc chạy công cụ kiểm tra trước khi nhờ hỗ trợ. |
 
 ### 2.2. Cluster
 
