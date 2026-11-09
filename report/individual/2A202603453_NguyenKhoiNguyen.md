@@ -193,7 +193,9 @@ Nếu được thực hiện lại, em sẽ dành nhiều thời gian hơn cho v
 Trong quá trình phản biện, em muốn tập trung nhiều hơn vào các điều như sau. Thứ nhất, actor đã được xác định đủ rõ chưa và có thực sự gặp vấn đề đó không? Thứ hai, bottleneck đã được chứng minh bằng dữ liệu hay mới chỉ là nhận định? Thứ ba, nhóm đã xem xét phương án No AI và Rule trước khi lựa chọn Workflow hoặc Agent chưa? 
 
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
+
 Problem của nhóm là người thực hiện mô hình ML/DL gặp khó khăn khi kết quả đầu ra không như kỳ vọng và chưa dễ dàng xác định nguyên nhân. Quy trình hiện tại gồm chạy mô hình, kiểm tra kết quả, rà soát dữ liệu và cấu hình, điều chỉnh từng thành phần rồi chạy thử lại. Metric cần theo dõi là thời gian debug, số vòng thử nghiệm và chất lượng đầu ra của mô hình, với baseline phải được đo trước khi đánh giá mức cải thiện. Boundary là AI chỉ hỗ trợ phân tích code, log và đề xuất hướng kiểm tra, không tự ý thay đổi code chính hoặc quyết định kết quả cuối cùng. Mức can thiệp phù hợp để thử nghiệm là Workflow có AI hỗ trợ, kết hợp các bước kiểm tra theo quy tắc và sự xác nhận của con người. Nhóm chỉ nên đưa ra quyết định Go khi có bằng chứng cho thấy giải pháp thực sự giảm thời gian xử lý mà vẫn đảm bảo chất lượng kết quả; nếu chưa đủ dữ liệu thì nên chọn Not Yet và tiếp tục kiểm chứng.
+
 ---
 
 ## 7. Tài liệu tham khảo
