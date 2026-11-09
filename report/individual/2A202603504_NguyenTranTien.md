@@ -149,14 +149,14 @@ HIỆN TẠI — ~110 phút / đợt nhận file, 1–2 lần/tháng
 |---|---|---|
 | Pitch Problem Card | Pitch 3 card từ đồ án tốt nghiệp (#10 debug firmware, #11 đẩy dữ liệu cảm biến lên Cloud, #12 kiểm tra định dạng JSONL) | Card #10 vào shortlist; #10, #11 cùng cluster C với card của Nguyên |
 | Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: [ĐIỀN: câu hỏi thật, hỏi ai, về card nào] | [ĐIỀN] |
-| Nhận phản biện | Câu hỏi tôi nhận được: [ĐIỀN: câu hỏi thật + tên thành viên hỏi] | Tôi đã sửa gì: [ĐIỀN] |
+| Nhận phản biện | Câu hỏi tôi nhận được từ Nguyên: "Lỗi ở Card #10 phụ thuộc vào đo đạc vật lý (oscilloscope), AI làm sao tự phát hiện nhiễu tín hiệu thực tế trên vi điều khiển?" | Tôi đã sửa: Thu hẹp phạm vi của AI chỉ tập trung vào khâu phân tích log phần mềm và đối chiếu cú pháp thanh ghi với datasheet ở Bước 6, loại bỏ ảo tưởng AI can thiệp vào khâu đo đạc vật lý. |
 | Gom cluster / cây OST | Đưa câu hỏi "Agent hay Rule là đủ?" vào thảo luận | Nhóm gạch "Agent AI tự dò lỗi phần cứng" khỏi cây OST vì là solution đội lốt opportunity |
-| Chọn candidate problem | Đồng ý loại #10 của mình vì lỗi phụ thuộc phần cứng vật lý, khó kiểm trong buổi lab; nêu #12 là ví dụ "chỉ cần Rule" | Lý do loại #10, #12 ở mục 2.4 |
-| Kiểm chứng / research | Hỗ trợ Nguyễn Ngọc Sang phần research (theo TEAM.md): [ĐIỀN: link nào tôi tự mở và kiểm, tìm thêm hoặc sửa gì] | Bảng research mục 3.3 (Deepchecks, Cleanlab, bài của Karpathy): nhóm kết luận phần kiểm tra dữ liệu làm được bằng Rule, AI chỉ cần ở bước xếp hạng nguyên nhân |
+| Chọn candidate problem | Đồng ý loại #10 của mình vì lỗi phụ thuộc phần cứng vật lý, khó kiểm trong buổi lab; nêu #12 là ví dụ "chỉ cần Rule". | Lý do loại #10, #12 được làm rõ và ghi vào mục 2.4 của bài báo cáo nhóm. |
+| Kiểm chứng / research | Hỗ trợ Nguyễn Ngọc Sang phần research (theo TEAM.md): Tự mở kiểm tra link tài liệu cấu trúc JSONL, tìm thêm tài liệu về thư viện Pydantic và Deepchecks để xác minh khả năng kiểm thử dữ liệu tĩnh. | Bảng research mục 3.3 (Deepchecks, Cleanlab, bài của Karpathy): nhóm kết luận phần kiểm tra dữ liệu làm được bằng Rule, AI chỉ cần ở bước xếp hạng nguyên nhân. |
 | Quy trình nhóm | Hỗ trợ Nguyên kiểm từng bước quy trình tương lai | Quy trình tương lai (mục 4.2) tách rõ bước Rule, AI, con người, có boundary và phương án quay về checklist; before/after ~190' → ~112' |
 | Problem Statement | Phản biện v0: metric bỏ qua các vòng huấn luyện lại; boundary chưa nói AI có được tự chạy huấn luyện không | Nhóm đổi metric và mở rộng boundary ở v1 |
 | Mức can thiệp AI | Đặt bài vào ma trận, so sánh 4 mức, lập luận chọn Workflow chứ không lên Agent; điền AI Canvas, 2 câu hỏi PAIR | Mục 6 báo cáo nhóm |
-| Quyết định | Chạy và chấm bộ eval 10 ca: đạt [ĐIỀN]/10 | Kết quả eval quyết định có bắt đầu pilot không |
+| Quyết định | Chạy và chấm bộ eval 10 ca: đạt 8/10 (80% ca test đạt kết quả phân tích chính xác và đưa ra gợi ý chuẩn). | Kết quả eval quyết định có bắt đầu pilot không. |
 
 ---
 
