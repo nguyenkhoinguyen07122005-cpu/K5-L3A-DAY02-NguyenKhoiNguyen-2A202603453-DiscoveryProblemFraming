@@ -133,16 +133,16 @@ Quy trình nháp hiện tại:
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | Pitch 3 card, nhấn mạnh card #2 (chẩn đoán mô hình ML/DL kém) | Card #2 vào shortlist và được nhóm chọn làm candidate |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: [ĐIỀN: câu hỏi thật, hỏi ai, về card nào] | [ĐIỀN: câu hỏi đó làm card của bạn ấy thay đổi gì] |
-| Nhận phản biện | Câu hỏi tôi nhận được: [ĐIỀN: câu hỏi thật + ai hỏi] | Tôi đã sửa gì: [ĐIỀN] |
-| Gom cluster / cây OST | [ĐIỀN] | |
-| Chọn candidate problem | Giải thích vì sao loại card #1 (debugger + unit test đã đủ) và card #3 (profiler đã giải) | Nhóm loại #1, #3 và chọn #2 |
-| Kiểm chứng / research | [ĐIỀN: phỏng vấn ai (vai trò), research công cụ nào] | |
+| Pitch Problem Card | Pitch 3 card (#7, #8, #9 trong bảng pitch nhóm), nhấn mạnh card #2 của tôi (#8, chẩn đoán mô hình ML/DL kém) | Card #8 vào shortlist cùng #4 và #10, được nhóm chọn làm candidate |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: AI sai thì sao /có checklist làm phương án quay về  |
+| Nhận phản biện | Câu hỏi tôi nhận được: (1) Card #1: "Debugger + unit test đã đủ chưa, cần gì thêm?"; (2) Card #2: "Nếu không có AI, cách đơn giản nhất để giảm một nửa số vòng là gì?"; (3) Card #3: "Chậm do code hay do phần cứng/dữ liệu lớn?"| Tôi đã sửa gì: (1) thừa nhận debugger gần đủ, card #1 bị loại; (2) thêm checklist chẩn đoán theo thứ tự làm phương án No AI và phương án quay về trong quy trình tương lai; (3) ghi vào "Điều còn chưa chắc" của card #3 |
+| Gom cluster / cây OST | Ghi chép bảng pitch 12 candidate; đề xuất gom #7–#11 thành cluster "tìm nguyên nhân lỗi bằng thử–sai" vì cùng pattern đoán rồi chạy lại | Cluster C trở thành gốc của cây OST; 3 opportunity đều có candidate của ít nhất 2 thành viên |
+| Chọn candidate problem | Giải thích vì sao loại card #1 và #3 của mình (#7, #9: debugger, unit test, profiler đã giải) | Nhóm loại #7, #9 và chọn #8 |
+| Kiểm chứng / research | Hỗ trợ Phương: soạn kịch bản phỏng vấn 8 câu và form survey 7 câu theo The Mom Test, bỏ hết câu dạng "Bạn có muốn…" | Nhóm dùng kịch bản này khi hỏi học viên nhóm khác (`report/assets/cp4-interview-script.md`) |
 | Quy trình nhóm | Vẽ quy trình hiện tại và tương lai, tính bảng before/after | Bottleneck chốt ở bước đoán nguyên nhân; metric chính đổi sang số vòng huấn luyện lại |
-| Problem Statement | Viết v0; sửa lên v1 sau phản biện | v1 thu hẹp actor, đổi metric, mở rộng boundary |
-| Mức can thiệp AI | [ĐIỀN] | |
-| Quyết định | [ĐIỀN] | |
+| Problem Statement | Viết v0 (6 trường); nhận phản biện của Tiến về metric và boundary, cùng Phương sửa lên v1 | v1 thu hẹp actor, đổi metric chính sang số vòng huấn luyện lại, mở rộng boundary |
+| Mức can thiệp AI | Hỗ trợ Tiến: dùng quy trình tương lai để chỉ rõ bước nào Rule, bước nào AI, bước nào con người | Nhóm chọn Workflow; bước kiểm tra dữ liệu tách thành Rule, AI chỉ làm bước xếp hạng giả thuyết |
+| Quyết định | Tham gia chấm 4 rủi ro cùng nhóm; đề xuất thêm ngưỡng dừng theo tỷ lệ "sửa mà không chạy kiểm tra xác nhận" | Quyết định "Go, phạm vi nhỏ" có 4 ngưỡng dừng, trong đó có ngưỡng cho rủi ro Usability |
 ---
 
 ## 5. Dùng AI
@@ -179,5 +179,5 @@ Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ ch
 ---
 
 ## 7. Tài liệu tham khảo
-
--
+- Python docs — The Python Profilers (cProfile): https://docs.python.org/3/library/profile.html
+- Andrej Karpathy, A Recipe for Training Neural Networks (2019): http://karpathy.github.io/2019/04/25/recipe/
