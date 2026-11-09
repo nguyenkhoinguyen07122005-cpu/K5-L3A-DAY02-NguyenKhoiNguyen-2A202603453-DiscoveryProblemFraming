@@ -4,9 +4,9 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Candidate problem nhóm chọn (1 câu):
-- Quyết định cuối (Go / Not Yet / No-Go):
+- Tên nhóm: Nhóm 4.1
+- Candidate problem nhóm chọn (1 câu): Sinh viên làm bài ML/DL phải huấn luyện lại nhiều vòng (mỗi vòng 15–60 phút) vì đoán nguyên nhân mô hình cho kết quả kém, thay vì kiểm tra có thứ tự dữ liệu, tiền xử lý và chỉ số.
+- Quyết định cuối (Go / Not Yet / No-Go): Go, phạm vi nhỏ (pilot 2 tuần, không xây công cụ mới, có ngưỡng dừng)
 
 ## Thành viên
 
