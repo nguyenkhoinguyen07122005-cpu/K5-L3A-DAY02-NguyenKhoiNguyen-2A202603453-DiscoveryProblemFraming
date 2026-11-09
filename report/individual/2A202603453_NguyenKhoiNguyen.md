@@ -40,9 +40,9 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 
 | Rank | Problem | Vì sao chọn | Điều còn chưa chắc |
 |---:|---|---|---|
-| 1 | Tìm nguyên nhân code Python sai | Ba dòng cùng một pattern, quy trình vẽ được | Baseline mới là ước lượng (<15 phút) nên pain có thể nhỏ; chưa rõ bottleneck nằm ở bước đọc code hay bước thử sửa; debugger + test có thể đã đủ giải quyết |
-| 2 | Tìm nguyên nhân mô hình ML/DL cho kết quả kém | Cần đối chiếu nhiều nguồn: dữ liệu, xử lý, chỉ số | Chưa rõ tần suất gặp; nguyên nhân thường nằm ở dữ liệu hay ở tham số; mỗi bài/mô hình khác nhau nên khó chuẩn hóa quy trình |
-| 3 | Tìm đoạn code/bước chạy chậm | Có thể đo được thời gian trước và sau | Chậm có thể do phần cứng hoặc kích thước dữ liệu chứ không do code; profiler có sẵn có thể đã giải quyết bước "tìm đoạn chậm" mà không cần AI |
+| 1 | Tìm nguyên nhân code Python sai (gộp #1, #3, #4) | Ba dòng cùng một pattern, quy trình vẽ được | Baseline mới là ước lượng (<15 phút) nên pain có thể nhỏ; chưa rõ bottleneck nằm ở bước đọc code hay bước thử sửa; debugger + test có thể đã đủ giải quyết |
+| 2 | Tìm nguyên nhân mô hình ML/DL cho kết quả kém (#7) | Cần đối chiếu nhiều nguồn: dữ liệu, xử lý, chỉ số | Chưa rõ tần suất gặp (mấy lần/tuần); nguyên nhân thường nằm ở dữ liệu hay ở tham số; mỗi bài/mô hình khác nhau nên khó chuẩn hóa quy trình |
+| 3 | Tìm đoạn code/bước chạy chậm (#2, #6) | Có thể đo được thời gian trước và sau | Chậm có thể do phần cứng/kích thước dữ liệu chứ không do code; profiler có sẵn có thể đã giải quyết bước "tìm đoạn chậm" mà không cần AI |
 
 ### Problem Card #1
 
@@ -54,10 +54,10 @@ Lăng kính: **Lặp lại** · **Tốn thời gian** · **Cần đọc, tổng 
 | Quy trình hiện tại (3–7 bước) | 1. Chạy code, thấy kết quả sai · 2. Đọc lại code · 3. In giá trị trung gian · 4. Thử sửa · 5. Chạy lại · 6. Lặp lại đến khi đúng |
 | Bottleneck (bước nào, mất bao nhiêu phút) | Bước 4 "Thử sửa" và vòng lặp 4 → 5 → 6: sửa theo phỏng đoán khi chưa có giả thuyết rõ, nên phải chạy lại nhiều lần. Ước lượng khoảng 6 phút cho vòng lặp này / tổng khoảng 13 phút. |
 | Impact (nếu không giải thì sao) | Tốn thời gian sát hạn nộp; sửa sai chỗ dễ làm hỏng phần đang chạy đúng (liên quan #5); ít thời gian kiểm tra kỹ phần khác, tăng rủi ro nộp bài còn lỗi. |
-| Success metric (baseline → target) | Baseline: dưới 15 phút/lần (tự ước lượng, cần bấm giờ lại để chính xác). Target: giảm ≥ 50% thời gian tìm nguyên nhân và số lần thử sửa ≤ 2 lần/lỗi. Cách đo: tự bấm giờ và đếm số lần chạy lại cho mỗi lỗi trong 1–2 tuần |
+| Success metric (baseline → target) | Baseline: ~13 phút và 3–4 lần thử sửa cho mỗi lỗi (tự ước lượng bài gần nhất). Target: ≤ 7 phút và ≤ 2 lần thử sửa/lỗi. Cách đo: tự bấm giờ và đếm số lần chạy lại cho mỗi lỗi trong 1–2 tuần |
 | Phương án không dùng AI | Debugger từng bước, kiểm thử nhỏ cho từng hàm, checklist tìm lỗi |
 | Giả thuyết về AI (nếu có) | Nếu đưa code + input + output mong đợi/thực tế cho LLM, AI có thể đề xuất 2–3 giả thuyết nguyên nhân kèm vị trí nghi ngờ, giúp bỏ bớt các vòng thử sửa "mù". Người vẫn tự xác minh bằng debugger/test trước khi sửa. |
-| Cảm nhận nhanh | Workflow — nhưng phải so sánh kỹ với No AI (debugger + unit test) vì có thể đã đủ |
+| Cảm nhận nhanh | Chưa biết, nghiêng về No AI (debugger + unit test có thể đã đủ) |
 
 Quy trình nháp hiện tại:
 
@@ -73,10 +73,10 @@ Quy trình nháp hiện tại:
 | Job Story | Khi kết quả mô hình không như mong đợi, tôi muốn đối chiếu dữ liệu đầu vào, quá trình xử lý và các chỉ số đánh giá, để tìm được nguyên nhân ảnh hưởng đến kết quả. |
 | Actor | Sinh viên làm bài tập ML/DL |
 | Thời điểm / bối cảnh | Khi làm assignment/project ML/DL, ngay sau lần huấn luyện đầu tiên cho chỉ số (accuracy, loss, F1…) thấp hơn kỳ vọng hoặc chênh lệch lớn giữa train và validation. |
-| Quy trình hiện tại (3–7 bước) | 1. Huấn luyện và xem chỉ số · 2. Kiểm tra dữ liệu đầu vào · 3. Kiểm tra bước tiền xử lý · 4. Xem lại chỉ số · 5. Đổi tham số hoặc dữ liệu · 6. Huấn luyện lại |
-| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 4–5: đối chiếu chỉ số với dữ liệu/tiền xử lý để đoán nguyên nhân rồi đổi tham số. Mỗi giả thuyết sai phải trả giá bằng một lần huấn luyện lại 15–60 phút. Ước lượng: khoảng 10 phút đối chiếu, huấn luyện lại khoảng 3 lần trước khi tìm ra nguyên nhân. |
+| Quy trình hiện tại (3–7 bước) | 1. Huấn luyện và xem chỉ số · 2. Kiểm tra dữ liệu đầu vào · 3. Kiểm tra bước tiền xử lý · 4. Đối chiếu chỉ số, đoán nguyên nhân · 5. Đổi tham số hoặc dữ liệu · 6. Huấn luyện lại, lặp từ bước 2 |
+| Bottleneck (bước nào, mất bao nhiêu phút) | Bước 4, đối chiếu chỉ số và đoán nguyên nhân: ~10 phút/vòng. Bước này chỉ cho ra một giả thuyết và không có cách xác nhận rẻ, nên mỗi lần đoán sai phải trả bằng một vòng huấn luyện lại 15–60 phút. Ước lượng: huấn luyện lại khoảng 3 lần trước khi tìm ra nguyên nhân. |
 | Impact (nếu không giải thì sao) | Mỗi giả thuyết sai tốn một vòng huấn luyện; dễ chỉnh tham số ngẫu nhiên trong khi lỗi thật nằm ở dữ liệu (rò rỉ dữ liệu, sai nhãn, chuẩn hóa sai, mất cân bằng lớp); kết quả cuối kém và khó giải thích trong báo cáo. |
-| Success metric (baseline → target) | Baseline: dưới 30 phút/lần (tự ước lượng). Target: thời gian chẩn đoán ≤ 15 phút và số lần huấn luyện lại trước khi tìm ra nguyên nhân ≤ 2. Cách đo: tự bấm giờ mỗi lần và ghi log mỗi lần huấn luyện (tham số, chỉ số, lý do chạy lại) |
+| Success metric (baseline → target) | Baseline: ~30 phút chẩn đoán và ~3 lần huấn luyện lại mỗi bài (tự ước lượng). Target: thời gian chẩn đoán ≤ 15 phút và ≤ 2 lần huấn luyện lại trước khi tìm ra nguyên nhân. Cách đo: tự bấm giờ và ghi log mỗi lần huấn luyện (tham số, chỉ số, lý do chạy lại) |
 | Phương án không dùng AI | Checklist chẩn đoán (dữ liệu → tiền xử lý → chỉ số), ghi log mỗi lần chạy |
 | Giả thuyết về AI (nếu có) | Nếu đưa log huấn luyện, thống kê mô tả dữ liệu và code tiền xử lý cho LLM, AI có thể liệt kê các nguyên nhân khả dĩ theo checklist (overfit/underfit, rò rỉ dữ liệu, mất cân bằng lớp, sai scale) và gợi ý kiểm tra rẻ nhất cần làm **trước** khi huấn luyện lại. Người quyết định có huấn luyện lại hay không. |
 | Cảm nhận nhanh | Workflow (checklist dạng Rule + LLM tóm tắt, đối chiếu và xếp hạng giả thuyết) |
@@ -85,7 +85,8 @@ Quy trình nháp hiện tại:
 
 ```text
 [1 Huấn luyện + xem chỉ số: 30'] → [2 Kiểm tra dữ liệu: 5'] → [3 Kiểm tra tiền xử lý: 5']
-→ [4 Đối chiếu chỉ số: 10'] ← BOTTLENECK → [5 Đổi tham số: 3'] → [6 Huấn luyện lại: 30']
+→ [4 Đối chiếu chỉ số, đoán nguyên nhân: 10'] ← BOTTLENECK → [5 Đổi tham số: 3'] → [6 Huấn luyện lại: 30']
+→ chưa tốt: quay lại bước 2, lặp ~3 vòng (≈ 30' + 3 × 53' ≈ 190')
 ```
 
 ### Problem Card #3
@@ -98,7 +99,7 @@ Quy trình nháp hiện tại:
 | Quy trình hiện tại (3–7 bước) | 1. Chạy và chờ · 2. Đoán đoạn chậm · 3. Thêm lệnh đo giờ · 4. Sửa · 5. Chạy lại |
 | Bottleneck (bước nào, mất bao nhiêu phút) | Bước 2–3: đoán đoạn chậm rồi thêm lệnh đo giờ; đoán sai thì phải thêm đo giờ và chạy lại toàn bộ nhiều lần. Ước lượng khoảng 15 phút. |
 | Impact (nếu không giải thì sao) | Thời gian chờ chiếm phần lớn buổi làm bài, số lần thử nghiệm được ít đi, dễ hết quota GPU/Colab. |
-| Success metric (baseline → target) | Baseline: 15–60 phút/lần chạy (tự ước lượng). Target: giảm ≥ 30% thời gian chạy; thời gian tìm đoạn chậm ≤ 10 phút. Cách đo: ghi thời gian chạy mỗi lần |
+| Success metric (baseline → target) | Baseline: ~15 phút tìm đoạn chậm, chương trình chạy ~20 phút (tự ước lượng). Target: tìm đoạn chậm ≤ 10 phút; thời gian chạy ≤ 14 phút (giảm ≥ 30%). Cách đo: ghi thời gian tìm và thời gian chạy mỗi lần |
 | Phương án không dùng AI | Công cụ profiling có sẵn (ví dụ cProfile), đo giờ từng bước |
 | Giả thuyết về AI (nếu có) | Profiler đã chỉ ra đoạn chậm, nên AI chỉ có giá trị ở bước gợi ý cách tối ưu (vector hóa, cache, batch, tăng `num_workers` của DataLoader…) dựa trên output profiler. |
 | Cảm nhận nhanh | No AI / Rule (dùng profiler là chính) |
@@ -112,7 +113,7 @@ Quy trình nháp hiện tại:
 ### Card muốn pitch nhất
 
 - Card số: 2
-- Vì sao: Đây là card cần tổng hợp nhiều nguồn thông tin nhất (dữ liệu, tiền xử lý, chỉ số, log) và mỗi giả thuyết sai rất đắt (một lần huấn luyện lại 15–60 phút). Card #1 có baseline nhỏ (<15 phút) và debugger có thể đã đủ; card #3 phần lớn giải được bằng profiler, không cần AI.
+- Vì sao: Đây là card cần tổng hợp nhiều nguồn thông tin nhất (dữ liệu, tiền xử lý, chỉ số, log) và mỗi giả thuyết sai rất đắt (một lần huấn luyện lại 15–60 phút). Lúc xếp hạng ban đầu tôi để card #1 lên đầu vì quy trình dễ vẽ nhất, nhưng sau phản biện (bảng dưới) thấy card #1 có pain nhỏ (~13 phút) và debugger có thể đã đủ, còn card #3 phần lớn giải được bằng profiler, nên chuyển sang pitch card #2.
 - Câu hỏi muốn nhóm phản biện: Các bạn thường phải huấn luyện lại bao nhiêu lần trước khi tìm ra nguyên nhân mô hình kém? Một checklist chẩn đoán không dùng AI có đủ không, hay bước đối chiếu nhiều nguồn thật sự cần AI?
 
 ### AI đã phản biện card thế nào
@@ -120,7 +121,8 @@ Quy trình nháp hiện tại:
 | Điểm yếu AI chỉ ra | Đồng ý? | Đã sửa gì |
 |---|---|---|
 | Mọi baseline đều là tự ước lượng, chưa bấm giờ thật → success metric chưa đáng tin | Đồng ý | Ghi rõ "tự ước lượng" ở mọi baseline; thêm cách đo (bấm giờ + log mỗi lần chạy trong 1–2 tuần) |
-| Card #1 baseline < 15 phút, pain có thể quá nhỏ để cần AI; debugger + unit test có thể đã đủ | Đồng ý | Không chọn #1 để pitch; ghi No AI là phương án so sánh chính |
+| Card #1 baseline < 15 phút, pain có thể quá nhỏ để cần AI; debugger + unit test có thể đã đủ | Đồng ý | Không chọn #1 để pitch; đổi cảm nhận nhanh sang "Chưa biết, nghiêng No AI" |
+| Card #2 bottleneck ghi "bước 4–5" là hai bước, chưa phải một bước cụ thể | Đồng ý | Chốt bottleneck ở bước 4 (đối chiếu, đoán nguyên nhân) và ghi rõ vì sao bước 10' lại gây tốn 30'/vòng |
 | Card #2 job story còn rộng ("kết quả không như mong đợi"), chưa rõ loại bài/mô hình nên khó đo | Đồng ý một phần | Bổ sung bối cảnh cụ thể (sau lần huấn luyện đầu, chỉ số thấp hoặc lệch train/val) và metric "số lần huấn luyện lại" |
 | Card #3: profiler đã giải bước "tìm đoạn chậm", phần AI mỏng | Đồng ý | Đổi cảm nhận nhanh sang No AI / Rule |
 | Actor đều là bản thân tôi, chưa có bằng chứng từ người khác | Đồng ý | Ghi vào "Điều còn chưa chắc"; cần hỏi 3–5 bạn cùng lớp ở CP4 |
@@ -131,17 +133,16 @@ Quy trình nháp hiện tại:
 
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | | |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
-| Gom cluster / cây OST | | |
-| Chọn candidate problem | | |
-| Kiểm chứng / research | | |
-| Quy trình nhóm | | |
-| Problem Statement | | |
-| Mức can thiệp AI | | |
-| Quyết định | | |
-
+| Pitch Problem Card | Pitch 3 card, nhấn mạnh card #2 (chẩn đoán mô hình ML/DL kém) | Card #2 vào shortlist và được nhóm chọn làm candidate |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: [ĐIỀN: câu hỏi thật, hỏi ai, về card nào] | [ĐIỀN: câu hỏi đó làm card của bạn ấy thay đổi gì] |
+| Nhận phản biện | Câu hỏi tôi nhận được: [ĐIỀN: câu hỏi thật + ai hỏi] | Tôi đã sửa gì: [ĐIỀN] |
+| Gom cluster / cây OST | [ĐIỀN] | |
+| Chọn candidate problem | Giải thích vì sao loại card #1 (debugger + unit test đã đủ) và card #3 (profiler đã giải) | Nhóm loại #1, #3 và chọn #2 |
+| Kiểm chứng / research | [ĐIỀN: phỏng vấn ai (vai trò), research công cụ nào] | |
+| Quy trình nhóm | Vẽ quy trình hiện tại và tương lai, tính bảng before/after | Bottleneck chốt ở bước đoán nguyên nhân; metric chính đổi sang số vòng huấn luyện lại |
+| Problem Statement | Viết v0; sửa lên v1 sau phản biện | v1 thu hẹp actor, đổi metric, mở rộng boundary |
+| Mức can thiệp AI | [ĐIỀN] | |
+| Quyết định | [ĐIỀN] | |
 ---
 
 ## 5. Dùng AI
@@ -149,7 +150,7 @@ Quy trình nháp hiện tại:
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
 | CP1 Scan | | | | |
-| CP2 Problem Card | Paraphrase lại các ý tưởng của tôi; phản biện điểm yếu của từng card | Chỉ ra card #3 giải được bằng profiler, card #1 có thể chỉ cần debugger | Số liệu ước lượng AI đề xuất là con số điển hình, chưa chắc khớp trải nghiệm thật của tôi | Đối chiếu lại với bài gần nhất, chỉnh số cho đúng|
+| CP2 Problem Card | Đóng vai PM hoài nghi, phản biện 3 card (chỉ hỏi điểm yếu, không viết lại) | Chỉ ra mọi baseline mới là ước lượng; chỉ ra card #3 giải được bằng profiler; chỉ ra bottleneck card #2 đang gộp 2 bước | Góp ý card #2 "job story quá rộng" nhưng không nói nên thu hẹp theo hướng nào | Tự thu hẹp bằng bối cảnh cụ thể (ngay sau lần huấn luyện đầu, chỉ số thấp hoặc lệch train/val) và thêm metric "số lần huấn luyện lại" |
 | CP4 Research | | | | |
 | CP5 Quy trình | | | | |
 | CP5–6 Problem Statement | | | | |
