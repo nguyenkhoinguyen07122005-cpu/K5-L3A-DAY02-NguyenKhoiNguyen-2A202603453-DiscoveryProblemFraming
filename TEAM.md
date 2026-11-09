@@ -13,9 +13,9 @@
 | STT | Họ và tên | MSSV | Vai trò trong nhóm | Repo cá nhân |
 |---:|---|---|---|---|
 | 1 | Nguyễn Khôi Nguyên | 2A202603453 | Ghi chép; vẽ quy trình; viết Problem Statement v0 | https://github.com/nguyenkhoinguyen07122005-cpu/K5-L3A-DAY02-NguyenKhoiNguyen-2A202603453-DiscoveryProblemFraming |
-| 2 | Nguyễn Ngọc Sang | [ĐIỀN] | Điều phối thời gian; phụ trách research; chốt 4 rủi ro và quyết định | [ĐIỀN] |
-| 3 | Đào Thị Thu Phương | [ĐIỀN] | Phụ trách kiểm chứng (phỏng vấn/survey); viết Problem Statement v1 và tiêu chí đánh giá | [ĐIỀN] |
-| 4 | Nguyễn Trần Tiến | [ĐIỀN] | Người phản biện chính; phụ trách mức can thiệp AI và bộ eval | [ĐIỀN] |
+| 2 | Nguyễn Ngọc Sang | 2A202603444 | Điều phối thời gian; phụ trách research; chốt 4 rủi ro và quyết định |  https://github.com/nguyenkhoinguyen07122005-cpu/K5-L3A-DAY02-NguyenKhoiNguyen-2A202603453-DiscoveryProblemFraming |
+| 3 | Đào Thị Thu Phương | 2A202603457 | Phụ trách kiểm chứng (phỏng vấn/survey); viết Problem Statement v1 và tiêu chí đánh giá |  https://github.com/nguyenkhoinguyen07122005-cpu/K5-L3A-DAY02-NguyenKhoiNguyen-2A202603453-DiscoveryProblemFraming |
+| 4 | Nguyễn Trần Tiến | 2A202603504 | Người phản biện chính; phụ trách mức can thiệp AI và bộ eval |  https://github.com/nguyenkhoinguyen07122005-cpu/K5-L3A-DAY02-NguyenKhoiNguyen-2A202603453-DiscoveryProblemFraming |
 
 Không ghi email hay số điện thoại vào bảng này, vì repo có thể để public.
 
@@ -62,7 +62,7 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 - Metric nên đo đúng chỗ tốn nhất: số vòng huấn luyện lại quan trọng hơn thời gian ngồi đoán nguyên nhân.
 - Phải tách rõ phần Rule làm được và phần thật sự cần AI, rồi đặt boundary để sinh viên vẫn là người quyết định.
 
-### NguyenNgocSang-[MSSV]
+### NguyenNgocSang-2A202603444
 
 **Phần việc phụ trách:**
 
@@ -89,7 +89,7 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 - Research giải pháp có sẵn giúp nhóm không tự xây lại thứ đã có: Deepchecks đã làm phần kiểm tra, nhóm chỉ cần lo phần còn trống.
 - Quyết định "Go" vẫn cần ngưỡng dừng cụ thể, nếu không sẽ không biết lúc nào nên quay về phương án đơn giản hơn.
 
-### DaoThiThuPhuong-[MSSV]
+### DaoThiThuPhuong-2A202603457
 
 **Phần việc phụ trách:**
 
@@ -116,7 +116,7 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 - Tiêu chí đánh giá AI giống tiêu chí nghiệm thu trong BA: nếu không viết được "thế nào là đạt" thì chưa hiểu đủ bài toán.
 - Problem Statement v1 tốt hơn v0 nhờ thu hẹp actor; viết cho "mọi sinh viên ML" thì metric không đo được.
 
-### NguyenTranTien-[MSSV]
+### NguyenTranTien-2A202603504
 
 **Phần việc phụ trách:**
 
