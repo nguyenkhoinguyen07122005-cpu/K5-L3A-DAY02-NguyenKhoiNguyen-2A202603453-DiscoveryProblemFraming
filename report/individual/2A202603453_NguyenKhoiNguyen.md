@@ -163,19 +163,32 @@ Quy trình nháp hiện tại:
 Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ cho các câu 6.1–6.6 (không tính 6.7, câu này được chấm riêng ở tiêu chí C5). **Không dùng AI để viết thay.**
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
+Khi nghe các bạn trình bày top 3 problems, em nhận ra rằng mỗi người có thể gặp những khó khăn rất khác nhau dù cùng học tập và làm việc trong lĩnh vực công nghệ. Có những vấn đề ban đầu nghe khá đơn giản nhưng khi phân tích sâu hơn lại liên quan đến nhiều bước trong một quy trình. Điều này giúp em hiểu rằng một problem tốt không chỉ cần có tính thực tế mà còn phải xác định được ai là người gặp vấn đề, vấn đề xuất hiện ở đâu và ảnh hưởng cụ thể như thế nào.
+
+Đối với bản thân, em thường tập trung vào các vấn đề kỹ thuật như mô hình ML/DL cho kết quả không như kỳ vọng, xử lý dữ liệu chậm hoặc phát sinh lỗi sau khi sửa code. Tuy nhiên, qua hoạt động này, em hiểu rằng không nên mặc định vấn đề kỹ thuật nào cũng cần giải quyết bằng AI. Đôi khi việc tổ chức lại quy trình, bổ sung logging hoặc sử dụng các công cụ kiểm thử cơ bản đã có thể giải quyết phần lớn khó khăn. Em cũng học được cách nhìn problem từ góc độ người sử dụng thay vì chỉ tập trung vào công nghệ mình muốn xây dựng.
 
 **6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+Em nhận thấy nhóm có nguy cơ đi theo hướng solution-first khi bắt đầu nghĩ đến việc sử dụng AI hoặc xây dựng một công cụ để giải quyết vấn đề trước khi mô tả đầy đủ quy trình hiện tại. Đây là một xu hướng khá dễ gặp, đặc biệt khi các thành viên đều quan tâm đến công nghệ và muốn tạo ra một sản phẩm có nhiều tính năng.
 
+Điều quan trọng em rút ra là cần phân biệt giữa problem và solution. Ví dụ, thay vì bắt đầu bằng ý tưởng xây dựng một AI Agent, nhóm cần làm rõ người dùng đang thực hiện công việc gì, gặp khó khăn ở bước nào, mất bao nhiêu thời gian và hậu quả của vấn đề là gì. Sau đó mới xem xét liệu AI có thực sự cần thiết hay không. Cách tiếp cận này giúp tránh việc lựa chọn công nghệ chỉ vì nó mới hoặc hấp dẫn mà không giải quyết đúng nhu cầu.
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
+Em nhận ra rằng việc có một ý tưởng kỹ thuật tốt không đồng nghĩa với việc đó là phương án phù hợp nhất để giải quyết vấn đề. Ban đầu, khi nghĩ đến việc hỗ trợ debug mô hình ML/DL, em có xu hướng chú ý nhiều đến khả năng sử dụng AI để phân tích code và tìm nguyên nhân gây lỗi. Tuy nhiên, khi xem xét kỹ hơn các bước trong quy trình, em thấy rằng một số vấn đề có thể được xử lý bằng những phương pháp đơn giản hơn như kiểm tra dữ liệu đầu vào, lưu log, theo dõi metric và kiểm thử từng thành phần.
 
+Điều này khiến em thay đổi cách đánh giá giải pháp: thay vì mặc định cần một hệ thống AI phức tạp, cần chứng minh rằng các phương án không dùng AI hoặc dùng rule chưa đủ hiệu quả.
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
+Qua việc tìm hiểu cách kiểm chứng một problem, em hiểu rằng nhận định ban đầu của nhóm chỉ là giả thuyết và cần được đối chiếu với bằng chứng thực tế. Một vấn đề có thể nghe rất nghiêm trọng khi nhìn từ góc độ của người thực hiện, nhưng mức độ ảnh hưởng, tần suất xuất hiện và cách người dùng xử lý thực tế có thể khác với dự đoán ban đầu.
 
+Đối với những vấn đề kỹ thuật như debug mô hình hoặc tối ưu xử lý dữ liệu, em cho rằng chỉ hỏi người dùng có gặp khó khăn hay không là chưa đủ. Cần tìm hiểu lần gần nhất vấn đề xảy ra, họ đã xử lý như thế nào, mất bao lâu và kết quả cuối cùng ra sao. 
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
+Điều khó nhất đối với em là diễn đạt vấn đề đủ cụ thể nhưng không biến Problem Statement thành mô tả giải pháp. Khi mới tiếp cận, thường có xu hướng nói về công cụ hoặc công nghệ có thể sử dụng, thay vì tập trung vào nhu cầu thực tế của actor. Ngoài ra, việc xác định bottleneck cũng không đơn giản vì một quy trình có thể gồm nhiều bước liên quan đến nhau, nhưng không phải bước nào cũng gây ra ảnh hưởng lớn nhất.
 
+Một khó khăn khác là xây dựng success metric có thể đo lường được. Nếu chỉ viết rằng giải pháp giúp tiết kiệm thời gian hoặc cải thiện hiệu quả thì rất khó đánh giá thành công. Cần có baseline, target và cách đo cụ thể. 
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
+Nếu được thực hiện lại, em sẽ dành nhiều thời gian hơn cho việc thu thập bằng chứng trước khi nhóm lựa chọn candidate problem. Thay vì nhanh chóng thống nhất một ý tưởng vì cảm thấy nó phù hợp với chuyên ngành AI, em yêu cầu làm rõ tần suất xuất hiện, thời gian xử lý, mức độ ảnh hưởng và những giải pháp người dùng đang sử dụng. 
 
+Trong quá trình phản biện, em muốn tập trung nhiều hơn vào các điều như sau. Thứ nhất, actor đã được xác định đủ rõ chưa và có thực sự gặp vấn đề đó không? Thứ hai, bottleneck đã được chứng minh bằng dữ liệu hay mới chỉ là nhận định? Thứ ba, nhóm đã xem xét phương án No AI và Rule trước khi lựa chọn Workflow hoặc Agent chưa? 
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
-
+Problem của nhóm là người thực hiện mô hình ML/DL gặp khó khăn khi kết quả đầu ra không như kỳ vọng và chưa dễ dàng xác định nguyên nhân. Quy trình hiện tại gồm chạy mô hình, kiểm tra kết quả, rà soát dữ liệu và cấu hình, điều chỉnh từng thành phần rồi chạy thử lại. Metric cần theo dõi là thời gian debug, số vòng thử nghiệm và chất lượng đầu ra của mô hình, với baseline phải được đo trước khi đánh giá mức cải thiện. Boundary là AI chỉ hỗ trợ phân tích code, log và đề xuất hướng kiểm tra, không tự ý thay đổi code chính hoặc quyết định kết quả cuối cùng. Mức can thiệp phù hợp để thử nghiệm là Workflow có AI hỗ trợ, kết hợp các bước kiểm tra theo quy tắc và sự xác nhận của con người. Nhóm chỉ nên đưa ra quyết định Go khi có bằng chứng cho thấy giải pháp thực sự giảm thời gian xử lý mà vẫn đảm bảo chất lượng kết quả; nếu chưa đủ dữ liệu thì nên chọn Not Yet và tiếp tục kiểm chứng.
 ---
 
 ## 7. Tài liệu tham khảo
